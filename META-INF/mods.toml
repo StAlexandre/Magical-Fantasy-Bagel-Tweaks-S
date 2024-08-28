@@ -1,0 +1,12 @@
+modLoader="javafml"
+loaderVersion="[47.3.1,)"
+license="MIT"
+issuetrackerURL=""
+
+[[mods]]
+modId="mfbt"
+displayName="Magical Fantasy Bagel Tweaks"
+version="0.0.1 - 1.20.1"
+description='''
+Intended to be paired with the datapack, this mod works as a Forge port of eclipseisoffline's Modify Player Data mod.
+'''
