@@ -1,7 +1,6 @@
 # Magical-Fantasy-Bagel-Tweaks-S
  Implements several server-side changes to expand the ability of the datapack.
 # Effects
-* Allows the /data command to directly modify player data, specifically ForgeCaps.
+* Allows for extra skill points to be added to Lords of the highest level who achieve the Ruler challenge.
 ## Plans
-* Mod folder and subsequent calls use "mfbt" for "Magical Fantasy Bagel Tweaks"
-* Ports Modify Player Data to Forge
+* Backport Modify Player Data to Forge 1.20.1

@@ -21,7 +21,7 @@ public class mfbtVampirismHandler {
     return true;
   }
 
-  private int getBonusSP(String faction) {
+  public int getBonusSP(String faction) {
     switch (faction) {
       case "werewolf":
         return 24;
