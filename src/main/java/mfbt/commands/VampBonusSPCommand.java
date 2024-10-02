@@ -14,6 +14,7 @@ import net.minecraft.server.level.ServerPlayer;
 import org.apache.logging.log4j.core.config.plugins.convert.TypeConverters.StringConverter;
 import org.jetbrains.annotations.NotNull;
 
+// Pulling from de.teamlapen.vampirism.command.LevelUpCommand
 public class VampBonusSPCommand {
 
   public static ArgumentBuilder<CommandSourceStack, ?> register() {
