@@ -1,9 +1,12 @@
 package mfbt.util;
 
 import com.mojang.brigadier.context.CommandContext;
+import de.teamlapen.vampirism.api.VampirismCapabilities;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
