@@ -19,7 +19,7 @@ public class ModCommands {
 
     dispatcher.register(
       LiteralArgumentBuilder.<CommandSourceStack>literal("mfbt")
-        .then(VampBonusSPCommand.register()) // To register as /mfbt addVRSP <player>
+        .then(ModifyForgeCaps.register()) // To register as /mfbt addVRSP <player>
       );
 
   }
