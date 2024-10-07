@@ -2,6 +2,7 @@ package mfbt.util;
 
 import com.mojang.brigadier.context.CommandContext;
 import de.teamlapen.vampirism.api.VampirismCapabilities;
+import de.teamlapen.vampirism.entity.factions.FactionPlayerHandler;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -20,11 +21,10 @@ public class mfbtVampirismHandler implements ISyncable.ISyncableEntityCapability
   public boolean addBonusSP(CommandContext<CommandSourceStack> context) {
     // Get the Player's faction and lord level
     if (lord_level == 5) {
-      // Match the player's faction to the string via this.getBonusSP(this.getCurrentFaction())
-      // Add the skill points to the right faction ForgeCaps.vampirism:<faction>.skill_points
-   } else {
+      this.getCurrentFactionPlayer.ifPresent(player -> player.getSkillHandler().addSkillPoints((int) player.getBonusSP(player.getCurrentFaction())));
+    } else {
       return false;
-   }
+    }
   }
 
   public static @NotNull mfbtVampirismHandler get(@NotNull Player player) {

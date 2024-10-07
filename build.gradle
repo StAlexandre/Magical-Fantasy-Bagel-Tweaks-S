@@ -125,6 +125,19 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    maven {
+        name = "Maxanier"
+        url = "https://maven.maxanier.de/releases"
+    }
+
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+
+    mavenCentral()
 }
 
 dependencies {
@@ -149,6 +162,8 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    implementation fg.deobf("de.teamlapen.vampirism:Vampirism:1.20.1-1.10.7")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

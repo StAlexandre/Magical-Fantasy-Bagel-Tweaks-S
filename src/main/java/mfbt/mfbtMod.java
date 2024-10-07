@@ -20,10 +20,14 @@ public class mfbtMod {
 
     MinecraftForge.EVENT_BUS.addListener(this::onCommandsRegister);
 
+    CompatHandler.initialize();
+
   }
+
 
   public void onCommandsRegister(@NotNull RegisterCommandsEvent event) {
     ModCommands.registerCommands(event.getDispatcher(), event.getBuildContext());
-    // Imports "modifyPlayerData" here
+    // Imports commands here
   }
+
 }
