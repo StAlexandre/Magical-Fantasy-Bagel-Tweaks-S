@@ -14,26 +14,21 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 // Built using FactionPlayerHandler
-public class mfbtVampirismHandler implements ISyncable.ISyncableEntityCapabilityInst, IFactionPlayerHandler {
+public class MfbtVampirismHandler implements ISyncable.ISyncableEntityCapabilityInst, IFactionPlayerHandler {
 
-  public static final Logger LOGGER = LogManager.getLogger("mfbt-Vampirism");
+  public static final Logger LOGGER = LogManager.getLogger("MFBT-Vampirism");
 
   public boolean addBonusSP(CommandContext<CommandSourceStack> context) {
     // Get the Player's faction and lord level
     if (lord_level == 5) {
-      this.getCurrentFactionPlayer.ifPresent(player -> player.getSkillHandler().addSkillPoints((int) player.getBonusSP(player.getCurrentFaction())));
+      this.getCurrentFactionPlayer.ifPresent(player -> player.getSkillHandler().addSkillPoints((int)player.getBonusSP(player.getCurrentFaction())));
     } else {
       return false;
     }
   }
 
-  public static @NotNull mfbtVampirismHandler get(@NotNull Player player) {
-    return (mfbtVampirismHandler) player.getCapability(VampirismCapabilities.FACTION_HANDLER_PLAYER, null).orElseThrow(() -> new IllegalStateException("Cannot get mfbtVampirismHandler from EntityPlayer " + player));
-    // Rename VampirismCapabilities to mfbtVampirismCaps?
-  }
-
-  public static String getCurrentFaction() {
-    // Return the faction name?
+  public static @NotNull MfbtVampirismHandler get(@NotNull Player player) {
+    return (MfbtVampirismHandler) player.getCapability(VampirismCapabilities.FACTION_HANDLER_PLAYER, null).orElseThrow(() -> new IllegalStateException("Cannot get MfbtVampirismHandler from EntityPlayer " + player));
   }
 
   public int getBonusSP(String faction) {

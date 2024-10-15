@@ -18,7 +18,7 @@ public class CompatHandler {
       if (ModList.get().isLoaded(modId)) {
         data.initialize.run();
         data.isLoaded = true;
-        mfbtMod.LOG.info("Loaded [{}] compatibility", modId);
+        MfbtMod.LOG.info("Loaded [{}] compatibility", modId);
       }
     });
   }

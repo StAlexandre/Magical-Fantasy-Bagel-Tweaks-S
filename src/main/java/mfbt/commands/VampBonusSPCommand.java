@@ -33,7 +33,7 @@ public class VampBonusSPCommand {
       if (mh.getLordLevel() == 5) {
         context.getSource().sendSuccess(() -> Component.translatable("command.mfbt.breaker_challenges.ruler.success", mh.getBonusSP(handler.getCurrentFaction()), players.size() > 1 ? p.getDisplayName() : "Player"), true);
       } else {
-        context.getSource().sendFailure(Component.translatable("command.mfbt.breaker_challenges.ruler.fail", players.size() > 1 ? p.getDisplayName() : "Player"));
+        context.getSource().sendFailure(Component.translatable("command.mfbt.breaker_challenges.ruler.fail_lord_level", players.size() > 1 ? p.getDisplayName() : "Player"));
       }
     }
     return 0;

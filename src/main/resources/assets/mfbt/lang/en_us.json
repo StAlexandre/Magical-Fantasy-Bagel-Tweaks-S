@@ -1,4 +1,4 @@
 {
   "command.mfbt.breaker_challenges.ruler.success": "Added %s points to %s.",
-  "command.mfbt.breaker_challenges.ruler.fail": "Failed to give %s bonus points."
+  "command.mfbt.breaker_challenges.ruler.fail": "%s is not at the highest lord level."
 }

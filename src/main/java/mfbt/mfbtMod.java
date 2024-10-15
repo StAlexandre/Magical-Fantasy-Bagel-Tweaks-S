@@ -8,13 +8,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-@Mod("mfbt")
-public class mfbtMod {
+@Mod("MFBT")
+public class MfbtMod {
 
   public static final Logger LOGGER = LogManager.getLogger("Magical Fantasy Bagel Tweaks");
-  public static mfbtMod instance;
+  public static MfbtMod instance;
 
-  public mfbtMod() {
+  public MfbtMod() {
 
     instance = this;
 
