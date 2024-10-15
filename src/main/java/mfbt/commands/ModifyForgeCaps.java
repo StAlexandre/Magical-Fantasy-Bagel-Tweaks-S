@@ -24,9 +24,31 @@ public class ModifyForgeCaps {
       .then(Commands.argument("targets"), EntityArgument.players()).then(Commands.argument("path"), new NbtPathArgument())
         .then(Commands.literal("set")).then(Commands.argument("value", new StringRepresentableArgument())
           .executes(
-            ctxt -> setFC(ctxt.getSource(), EntityArgument.getPlayers(ctxt, "targets"), /* Take the rest of the arguments to find the location, and set */)
+            ctxt -> setFC(ctxt.getSource(), EntityArgument.getPlayers(ctxt, "targets"), (player, path, value) -> {/* Find player, locate path, then set to value */})
           )
         )
-        .then(Commands.literal("add"))
-  
+        .then(Commands.literal("changeBy")).then(Commands.argument("value", new /*Signed double value of any kind*/())
+          .executes(
+            ctxt -> cgeFC(ctxt.getSource(), EntityArgument.getPlayers(ctxt, "targets"), (player, path, value) -> {/* Find player, locate path, get current value of the Cap, change by value, then set */})
+          )
+        )
+
   }
+
+  private static cgeFC(CommandSourceStack sources, Collection<? extends Player> players, BiConsumer<Player, CommandSourceStack> action) {
+    // Uses setFC at the end to apply, cgeFC just has some added code to get and then change before setting.
+  }
+
+  private static setFC(CommandSourceStack sources, Collection<? extends Player> players, BiConsumer<Player, CommandSourceStack> action) {
+    for (Player player : players) {
+      action.accept(player, sources);
+    }
+    if (players.size() == 1) {
+      sources.sendSuccess(() -> Component.literal("Changed " + player.getName().getString() + " ForgeCaps"), true);
+    } else {
+      sources.sendSuccess(() -> Component.literal("Changed " + players.size() + " player ForgeCaps"), true);
+    }
+    return players.size();
+  }
+
+}
