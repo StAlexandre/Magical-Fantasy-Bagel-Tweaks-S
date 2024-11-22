@@ -19,7 +19,7 @@ public class ModCommands {
 
     dispatcher.register(
       LiteralArgumentBuilder.<CommandSourceStack>literal("mfbt")
-        .then(ModifyForgeCaps.register()) // To register as /mfbt addVRSP <player>
+        .then(ModifyPlayerData.register()) // To register as /mfbt ForgeCaps <player> <path> <set|changeBy> <value>
       );
 
   }
