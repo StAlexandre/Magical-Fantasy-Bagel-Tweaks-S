@@ -1,11 +1,11 @@
-package mfbt.util;
+package mfbt.util.compat;
 
 import java.util.Map;
 import mfbt.mfbtMod;
 import mfbt.commands.VampBonusSPCommand;
 import net.minecraftforge.fml.ModList;
 
-public class CompatHandler {
+public class Mods {
 
   public final static String VAMPIRISM = "vampirism";
 

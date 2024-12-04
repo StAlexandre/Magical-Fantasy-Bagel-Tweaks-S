@@ -1,4 +1,4 @@
-package mfbt.util;
+package mfbt.util.compat.vamprism;
 
 import com.mojang.brigadier.context.CommandContext;
 import de.teamlapen.vampirism.api.VampirismCapabilities;

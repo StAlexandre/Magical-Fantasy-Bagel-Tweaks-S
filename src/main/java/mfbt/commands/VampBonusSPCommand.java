@@ -5,7 +5,7 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import de.teamplapen.vampirism.entity.factions.FactionPlayerHandler;
 import java.util.Collection;
-import mfbt.util.mfbtVampirismHandler;
+import mfbt.util.compat.vampirism.mfbtVampirismHandler;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;

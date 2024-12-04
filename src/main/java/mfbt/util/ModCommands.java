@@ -4,7 +4,7 @@ import mfbt.commands.*;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import mfbt.util.ModCommands;
-import mfbt.util.CompatHandler;
+import mfbt.util.compat.Mods;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.synchronization.ArgumentTypeInfo;
