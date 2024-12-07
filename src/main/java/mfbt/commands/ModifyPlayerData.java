@@ -37,12 +37,15 @@ public class ModifyPlayerData {
 
   private static int setFC(CommandSourceStack sources, ServerPlayer players, DataManipulator targetPath, List<Tag> value) {
     for (Player player : players) {
-      // Will need to design custom accessor based off Player NBT Modifier mod to access players
+      // Will need to design custom accessor based off Player NBT Modifier mod to access players?
+      if (sources.contains(targetPath)) {
+        player.()
+      }
     }
     if (players.size() == 1) {
-      sources.sendSuccess(() -> Component.m_237110_("mfbt.commands.mpd_success_single"), /* Player with title */)
+      sources.sendSuccess(() -> Component.translatable("mfbt.commands.mpd_success_single"), player.getDisplayName());
     } else {
-      sources.sendSuccess(() -> Component.m_237110_("mfbt.commands.mpd_success_multiple"), players.size())
+      sources.sendSuccess(() -> Component.translatable("mfbt.commands.mpd_success_multiple"), players.size());
     }
   }
 
