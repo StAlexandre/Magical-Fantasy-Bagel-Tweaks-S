@@ -4,6 +4,7 @@ import com.mojang.brigadier.context.CommandContext;
 import de.teamlapen.vampirism.api.VampirismCapabilities;
 import de.teamlapen.vampirism.entity.factions.FactionPlayerHandler;
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.Capability;
@@ -19,16 +20,16 @@ public class MfbtVampirismHandler implements ISyncable.ISyncableEntityCapability
   public static final Logger LOGGER = LogManager.getLogger("MFBT-Vampirism");
 
   public boolean addBonusSP(CommandContext<CommandSourceStack> context) {
-    // Get the Player's faction and lord level
+    // Replace block with code to get the Player's faction and lord level
     if (lord_level == 5) {
-      this.getCurrentFactionPlayer.ifPresent(player -> player.getSkillHandler().addSkillPoints((int)player.getBonusSP(player.getCurrentFaction())));
+      this.getCurrentFactionPlayer().ifPresent(player -> player.getSkillHandler().addSkillPoints((int) player.getBonusSP(player.getCurrentFaction())));
     } else {
       return false;
     }
   }
 
   public static @NotNull MfbtVampirismHandler get(@NotNull Player player) {
-    return (MfbtVampirismHandler) player.getCapability(VampirismCapabilities.FACTION_HANDLER_PLAYER, null).orElseThrow(() -> new IllegalStateException("Cannot get MfbtVampirismHandler from EntityPlayer " + player));
+    return (MfbtVampirismHandler) player.getCapability(VampirismCapabilities.FACTION_HANDLER_PLAYER, null).orElseThrow(() -> new IllegalStateException("Cannot get Vampirism data from EntityPlayer " + player));
   }
 
   public int getBonusSP(String faction) {
